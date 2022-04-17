@@ -1,4 +1,4 @@
-#include"newCode_zuochengyun.h"
+#include"public.h"
 
 int main(){
 

@@ -7,10 +7,10 @@ project ("Algorithm")
 
 # 将源代码添加到此项目的可执行文件。
 add_executable (BubbleSort "BubbleSort.cpp" "public.h" )
-
 add_executable (SelectSort  "SelectSort.cpp" )
-
 add_executable(InsertSort "InsertSort.cpp" "public.h" )
 add_executable(FindAppearOddTimeNumber "FindAppearOddTimeNumber.cpp" "public.h" )
 add_executable(FindAppearOddTimeTwoNumber  "public.h" "FindAppearOddTimeTwoNumber.cpp")
+
+add_executable(findMaxValue  "public.h" "findMaxValue.cpp")
 
