@@ -6,11 +6,11 @@ cmake_minimum_required (VERSION 3.8)
 project ("Algorithm")
 
 # 将源代码添加到此项目的可执行文件。
-add_executable (BubbleSort "BubbleSort.cpp" "newCode_zuochengyun.h" )
+add_executable (BubbleSort "BubbleSort.cpp" "public.h" )
 
 add_executable (SelectSort  "SelectSort.cpp" )
 
-add_executable(InsertSort "InsertSort.cpp" "newCode_zuochengyun.h" )
-add_executable(FindAppearOddTimeNumber "FindAppearOddTimeNumber.cpp" "newCode_zuochengyun.h" )
-add_executable(FindAppearOddTimeTwoNumber  "newCode_zuochengyun.h" "FindAppearOddTimeTwoNumber.cpp")
+add_executable(InsertSort "InsertSort.cpp" "public.h" )
+add_executable(FindAppearOddTimeNumber "FindAppearOddTimeNumber.cpp" "public.h" )
+add_executable(FindAppearOddTimeTwoNumber  "public.h" "FindAppearOddTimeTwoNumber.cpp")
 
