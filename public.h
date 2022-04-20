@@ -14,8 +14,4 @@ using std::vector;
 using std::swap;
 using std::for_each;
 
-
-
-
-
 // TODO: 在此处引用程序需要的其他标头。

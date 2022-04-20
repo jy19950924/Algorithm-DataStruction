@@ -14,3 +14,4 @@ add_executable(FindAppearOddTimeTwoNumber  "public.h" "FindAppearOddTimeTwoNumbe
 
 add_executable(findMaxValue  "public.h" "findMaxValue.cpp")
 
+add_executable(MergeSortNonRecursion  "public.h" "MergeSortNonRecursion.cpp")
