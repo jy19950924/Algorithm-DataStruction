@@ -1,24 +1,5 @@
 #include"public.h"
 
-void merge(int beginPos , int endPos , vector<int>& arr){
-	if(beginPos > endPos) return;
-	int mediumPos = beginPos + ((endPos - beginPos) >> 1);
-	int p1 = beginPos;
-	int p2 = mediumPos + 1;
-	vector<int> alter;
-	while(p1 <= mediumPos && p2 <= endPos){
-		alter.push_back(arr[p1] < arr[p2] ? arr[p1++] : arr[p2++]);
-	}
-	while(p1 <= mediumPos){
-		alter.push_back(arr[p1++]);
-	}
-	while(p2 <= endPos){
-		alter.push_back(arr[p2++]);
-	}
-	for(int i = 0; i < alter.size(); i++){
-		arr[beginPos + i] = alter[i];
-	}
-}
 int main(){
 	int n = 0;
 	cin >> n;
@@ -26,18 +7,28 @@ int main(){
 	for_each(arr.begin() , arr.end() , [](int& t){
 		cin >> t;
 		});
-
-	int stepLen = 2;
-	while(stepLen < n){
+	vector<int> help(n , 0);
+	for(int stepLen =1;stepLen<n;stepLen+=2){
 		int i = 0;
-		for(; (i+stepLen-1) <n; i += stepLen){
-			merge(i , i + stepLen - 1 , arr);
+		for(; i+stepLen <n; i += stepLen){// 确保存在 右数列 且有效
+			int leftBeginPos = i;
+			int leftEndPos = i + stepLen - 1;
+			int rightBeginPos = leftEndPos + 1;
+			int rightEndPos = rightBeginPos + stepLen - 1 < n ? (rightBeginPos + stepLen - 1) : n - 1;// 存在右数列，但是不保证右数列一定是满足stepLen长度的
+			while(leftBeginPos <= leftEndPos && rightBeginPos <= rightEndPos){
+				help[i++] = arr[leftBeginPos] < arr[rightBeginPos] ? arr[leftBeginPos++] : arr[rightBeginPos++];
+			}
+			while(leftBeginPos <= leftEndPos){
+				help[i++] = arr[leftBeginPos++];
+			}
+			while(rightBeginPos <= rightEndPos){
+				help[i++] = arr[rightBeginPos++];
+			}
+			for(int j = 0; j < i; j++){ // 修改原数组中值
+				arr[j] = help[j];
+			}
 		}
-		merge(i , n - 1 , arr);// 0-7 8-15  8 10   16
-		stepLen *= 2;
 	}
-	merge(0 , n - 1 , arr);
-	
 	for_each(arr.begin() , arr.end() , [](int t){
 		cout << t << ' ';
 		});
