@@ -8,9 +8,9 @@ int main(){
 		cin >> t;
 		});
 	vector<int> help(n , 0);
-	for(int stepLen =1;stepLen<n;stepLen+=2){
+	for(int stepLen =1;stepLen<n;stepLen*=2){
 		int i = 0;
-		for(; i+stepLen <n; i += stepLen){// 确保存在 右数列 且有效
+		while(i+stepLen <n){// 确保存在 右数列 且有效
 			int leftBeginPos = i;
 			int leftEndPos = i + stepLen - 1;
 			int rightBeginPos = leftEndPos + 1;

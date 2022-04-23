@@ -4,14 +4,18 @@
 cmake_minimum_required (VERSION 3.8)
 
 project ("Algorithm")
+# 设置g++编译器中标准
+set(CMAKE_CXX_STANDARD 14)
 
 # 将源代码添加到此项目的可执行文件。
-add_executable (BubbleSort "BubbleSort.cpp" "public.h" )
-add_executable (SelectSort  "SelectSort.cpp" )
-add_executable(InsertSort "InsertSort.cpp" "public.h" )
-add_executable(FindAppearOddTimeNumber "FindAppearOddTimeNumber.cpp" "public.h" )
-add_executable(FindAppearOddTimeTwoNumber  "public.h" "FindAppearOddTimeTwoNumber.cpp")
+add_executable (BubbleSort "BubbleSort.cpp" "public.h"  "HeapSort.cpp")
+add_executable (SelectSort  "SelectSort.cpp"  "HeapSort.cpp")
+add_executable(InsertSort "InsertSort.cpp" "public.h"  "HeapSort.cpp")
+add_executable(FindAppearOddTimeNumber "FindAppearOddTimeNumber.cpp" "public.h"  "HeapSort.cpp")
+add_executable(FindAppearOddTimeTwoNumber  "public.h" "FindAppearOddTimeTwoNumber.cpp" "HeapSort.cpp")
 
-add_executable(findMaxValue  "public.h" "findMaxValue.cpp")
+add_executable(findMaxValue  "public.h" "findMaxValue.cpp" "HeapSort.cpp")
 
-add_executable(MergeSortNonRecursion  "public.h" "MergeSortNonRecursion.cpp")
+add_executable(MergeSortNonRecursion  "public.h" "MergeSortNonRecursion.cpp" )
+
+add_executable(HeapSort  "public.h"  "HeapSort.cpp")
