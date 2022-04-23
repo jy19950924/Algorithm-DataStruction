@@ -19,3 +19,4 @@ add_executable(findMaxValue  "public.h" "findMaxValue.cpp" "HeapSort.cpp")
 add_executable(MergeSortNonRecursion  "public.h" "MergeSortNonRecursion.cpp" )
 
 add_executable(HeapSort  "public.h"  "HeapSort.cpp")
+add_executable(kRangeOrder  "public.h"  "kRangeOrder.cpp")
