@@ -13,5 +13,6 @@ using std::endl;
 using std::vector;
 using std::swap;
 using std::for_each;
+using std::pair;
 
 // TODO: 在此处引用程序需要的其他标头。

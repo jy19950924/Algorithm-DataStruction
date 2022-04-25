@@ -22,3 +22,4 @@ add_executable(HeapSort  "public.h"  "HeapSort.cpp")
 add_executable(kRangeOrder  "public.h"  "kRangeOrder.cpp")
 
 add_executable(NetherlandsFlags "public.h" "NetherlandsFlags.cpp")
+add_executable(BalloonSort "public.h" "BalloonSort.cpp")
